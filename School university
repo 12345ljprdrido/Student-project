@@ -1,0 +1,286 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+
+  /* PARA SA TANAN and Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Main Header */
+header {
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    color: white;
+    display: flex;
+    justify-content: flex;
+    align-items: center;
+    width: 100%;
+  
+}
+
+header .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+header .logoP {
+    height: 80px; /* Adjust logo size */
+    width: auto;
+    position: relative;
+    margin-top: 10px;
+    left: 410px; /* Adjust the position of the logo */
+}
+
+/* Navigation */
+.div_nav {
+    background-color: rgb(1, 92, 46);
+   
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Center the nav items */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 20px 20px; /* Adjust margin as needed */
+    align-items: center;
+}
+
+nav ul li a {
+    color: rgb(250, 250, 250);
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Search Bar Styling */
+/* .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 700px; 
+}
+
+.search-container input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+.search-container button {
+    padding: 8px 12px;
+    margin-left: 5px;
+    background-color: rgb(1, 92, 46);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    color: #ffcc00;
+} */
+
+
+/* BODY */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+/* Fullscreen Video Styling */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    overflow: hidden;
+}
+
+.images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    flex-shrink: 0;
+    position: relative;
+}
+
+.slide video {
+    object-fit: cover; /* Ensure the video fills the container */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Put the video in the background */
+}
+
+
+
+/* Hide radio buttons */
+input[type="radio"] {
+    display: none;
+}
+
+/* Fullscreen video styling */
+video:fullscreen {
+    object-fit: cover; /* Ensure the video covers the screen in full-screen mode */
+}
+
+/* Dot container  */
+.dots {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 925px; 
+    left: 100px; 
+    z-index: 10;
+    transform: translateX(0); 
+}
+
+.dots label {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: rgba(7, 7, 7, 0.5);
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.dots label:hover {
+    background-color: yellow;
+}
+
+/* Select the right image based on radio button */
+#img1:checked ~ .images {
+    transform: translateX(0);
+}
+
+#img2:checked ~ .images {
+    transform: translateX(-100%);
+}
+
+#img3:checked ~ .images {
+    transform: translateX(-200%);
+}
+
+#img4:checked ~ .images {
+    transform: translateX(-300%);
+}
+
+/* Select the active dot */
+#img1:checked ~ .dots label:nth-child(1),
+#img2:checked ~ .dots label:nth-child(2),
+#img3:checked ~ .dots label:nth-child(3),
+#img4:checked ~ .dots label:nth-child(4) {
+    background-color: green;
+}
+
+
+/* PARAGRAPH */
+p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color:rgb(255, 255, 255);
+}
+
+.choose {
+    padding: 50px 60px;
+    background-color: rgb(1, 92, 46);
+    max-width: 1000px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+   
+}
+
+
+/* Make the page fully responsive */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-container {
+        margin-left: 0; /* Adjust the search bar position for mobile */
+        margin-top: 10px;
+    }
+
+    .logoP {
+        left: 0;
+        margin-top: 0;
+        height: 60px; /* Adjust logo size for mobile */
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Scroll to Bottom Button */
+#scrollToBottomBtn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgb(1, 92, 46);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    transition: opacity 0.3s ease;
+}
+
+#scrollToBottomBtn:hover {
+    background-color: #ffcc00;
+}
+
+/* Image Description Section */
+.image-description-section {
+    display: flex;
+    justify-content: space-between; /* Distribute items with space between */
+    padding: 40px;
+    background: linear-gra
